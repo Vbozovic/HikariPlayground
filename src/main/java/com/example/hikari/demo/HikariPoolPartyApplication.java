@@ -2,12 +2,14 @@ package com.example.hikari.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class HikariPoolpartyApplication {
+public class HikariPoolPartyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HikariPoolpartyApplication.class, args);
+
+		ConfigurableApplicationContext run = SpringApplication.run(HikariPoolPartyApplication.class, args);
 	}
 
 }

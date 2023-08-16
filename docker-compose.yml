@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:8.1.0
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: hikari_pool_party
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    platform: linux/x86_64
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: password
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
