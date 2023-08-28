@@ -8,7 +8,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class HikariPoolPartyApplication {
 
 	public static void main(String[] args) {
-
 		ConfigurableApplicationContext run = SpringApplication.run(HikariPoolPartyApplication.class, args);
 	}
 
