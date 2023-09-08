@@ -1,4 +1,4 @@
-package com.example.hikari.demo;
+package com.example.hikari.demo.feature.aircraft.data.paging;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,14 +15,10 @@ import java.util.Optional;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PageRequest {
-
-
     private Integer limit;
     private Integer page;
     private String sortColumn;
     private SortOrder sortOrder;
-
-
 
 
     public enum SortOrder {

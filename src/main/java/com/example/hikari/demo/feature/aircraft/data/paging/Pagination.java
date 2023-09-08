@@ -1,6 +1,5 @@
-package com.example.hikari.demo.db;
+package com.example.hikari.demo.feature.aircraft.data.paging;
 
-import com.example.hikari.demo.PageRequest;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

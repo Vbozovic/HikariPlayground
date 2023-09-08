@@ -1,20 +1,24 @@
-spring:
+main:
   datasource:
-    url: jdbc:mysql://localhost:3306/employees
-    username: root
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/demo
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+    name: mainDataSource
     hikari:
       connection-timeout: 30000
       idle-timeout: 600000
       keepalive-time: 0
       max-lifetime: 1800000
-      minimum-idle: 25
-      maximum-pool-size: 25
+      minimum-idle: 20
+      maximum-pool-size: 20
 
 server:
   port: 8083
 management:
+  health:
+    db:
+      enabled: true
   endpoints:
     web:
       exposure:

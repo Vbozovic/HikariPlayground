@@ -1,0 +1,18 @@
+package com.example.hikari.demo.feature.aircraft;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Map;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class AircraftDao {
+
+    private String aircraftCode;
+    private Map<String,String> model;
+    private Integer range;
+
+}
