@@ -10,8 +10,12 @@ main:
       idle-timeout: 600000
       keepalive-time: 0
       max-lifetime: 1800000
-      minimum-idle: 20
-      maximum-pool-size: 20
+      minimum-idle: 1
+      maximum-pool-size: 1
+
+database:
+  metadata:
+    introspect: aircrafts_data,airports_data,boarding_passes,bookings,flights,seats,ticket_flights,tickets
 
 server:
   port: 8083

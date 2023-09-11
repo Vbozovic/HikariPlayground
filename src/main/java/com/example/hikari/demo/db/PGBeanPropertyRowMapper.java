@@ -1,4 +1,4 @@
-package com.example.hikari.demo.feature.aircraft;
+package com.example.hikari.demo.db;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -24,16 +24,23 @@ public class PGBeanPropertyRowMapper<T> extends BeanPropertyRowMapper<T> {
     @Override
     protected Object getColumnValue(ResultSet rs, int index, PropertyDescriptor pd) throws SQLException {
         Object rsObj = rs.getObject(index);
-        if(rsObj instanceof PGobject && "jsonb".equals(((PGobject)rsObj).getType())){
-            PGobject obj = (PGobject)rs.getObject(index);
+        if(isObjectOfType("jsonb",rsObj)){
+            PGobject obj = (PGobject)rsObj;
             String jsonValue = obj.getValue();
             try {
                 return om.readValue(jsonValue, Map.class);
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }
+        } else if (isObjectOfType("point",rsObj)) {
+            PGobject obj = (PGobject)rsObj;
+            return obj.getValue();
         }
         return super.getColumnValue(rs, index, pd);
+    }
+
+    private boolean isObjectOfType(String type,Object object){
+        return object instanceof PGobject && type.equals(((PGobject)object).getType());
     }
 
     @Override

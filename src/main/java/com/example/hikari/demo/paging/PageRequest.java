@@ -1,4 +1,4 @@
-package com.example.hikari.demo.feature.aircraft.data.paging;
+package com.example.hikari.demo.paging;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

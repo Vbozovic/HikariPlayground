@@ -2,13 +2,12 @@ package com.example.hikari.demo.feature.aircraft.api;
 
 import com.example.hikari.demo.feature.aircraft.AircraftDao;
 import com.example.hikari.demo.feature.aircraft.data.AircraftRepository;
-import com.example.hikari.demo.feature.aircraft.data.paging.PagingBean;
+import com.example.hikari.demo.paging.PagingBean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController

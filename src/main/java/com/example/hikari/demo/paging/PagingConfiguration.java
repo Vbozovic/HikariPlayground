@@ -1,4 +1,4 @@
-package com.example.hikari.demo.feature.aircraft.data.paging;
+package com.example.hikari.demo.paging;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

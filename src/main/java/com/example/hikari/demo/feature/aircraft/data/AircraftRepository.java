@@ -1,10 +1,10 @@
 package com.example.hikari.demo.feature.aircraft.data;
 
 import com.example.hikari.demo.feature.aircraft.AircraftDao;
-import com.example.hikari.demo.feature.aircraft.PGBeanPropertyRowMapper;
-import com.example.hikari.demo.feature.aircraft.data.paging.PageRequest;
-import com.example.hikari.demo.feature.aircraft.data.paging.Pagination;
-import com.example.hikari.demo.feature.aircraft.data.paging.PagingBean;
+import com.example.hikari.demo.db.PGBeanPropertyRowMapper;
+import com.example.hikari.demo.paging.PageRequest;
+import com.example.hikari.demo.paging.Pagination;
+import com.example.hikari.demo.paging.PagingBean;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,7 +20,7 @@ public class AircraftRepository {
     private RowMapper<AircraftDao> mapper;
     private PagingBean page;
 
-    public AircraftRepository(@Qualifier("aircraftTemplate") JdbcTemplate template, PagingBean page) {
+    public AircraftRepository(@Qualifier("aircrafts_data") JdbcTemplate template, PagingBean page) {
         this.template = template;
         this.page = page;
         mapper = new PGBeanPropertyRowMapper<>(AircraftDao.class);

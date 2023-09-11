@@ -1,4 +1,4 @@
-package com.example.hikari.demo.feature.aircraft.data.paging;
+package com.example.hikari.demo.paging;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;

@@ -1,4 +1,4 @@
-package com.example.hikari.demo.feature.aircraft.data.paging;
+package com.example.hikari.demo.paging;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.WebRequest;
@@ -8,11 +8,11 @@ import java.util.Optional;
 @Component
 public class PagingParamsExtractor {
 
-    private static String PAGING_PREFIX = "paging-";
-    private static String PAGING_LIMIT = PAGING_PREFIX + "limit";
-    private static String PAGING_PAGE = PAGING_PREFIX + "page";
-    private static String PAGING_SORT_COLUMN = PAGING_PREFIX + "column";
-    private static String PAGING_SORT_ORDER = PAGING_PREFIX + "order";
+    public static String PAGING_PREFIX = "paging-";
+    public static String PAGING_LIMIT = PAGING_PREFIX + "limit";
+    public static String PAGING_PAGE = PAGING_PREFIX + "page";
+    public static String PAGING_SORT_COLUMN = PAGING_PREFIX + "column";
+    public static String PAGING_SORT_ORDER = PAGING_PREFIX + "order";
 
     private static Integer DEFAULT_LIMIT = 50;
     private static Integer DEFAULT_PAGE = 1;
